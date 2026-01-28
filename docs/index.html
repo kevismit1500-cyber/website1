@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://cdpn.io/kev-dawg1500/fullpage/EayZazx?nocache=true&view= -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+  
+
+  <title>Mini website mid term 2026 project</title>
+
+    <link rel="canonical" href="https://codepen.io/kev-dawg1500/pen/EayZazx">
+  
+  
+  
+  
+<style>
+/* Header Section Style */
+.hero-header {
+  width: 100%;
+  height: 650px;
+  background-image: url('https://img.freepik.com/premium-photo/cybersecurity_497783-228.jpg?w=2000');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.header-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 1rem 3rem;
+  border-radius: 25px;
+  text-align: center;
+  color: white;
+  border: 2px solid rgba(0, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+  backdrop-filter: blur(2px);
+}
+
+.hero-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+/* Loading Screen Style Fade-in */
+.header-overlay {
+  opacity: 0;
+  animation: glowIn 2.0s ease-out forwards;
+}
+
+@keyframes glowIn {
+  0% {
+    opacity: 0;
+    box-shadow: 0 0 0px rgba(0, 255, 255, 0);
+  }
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+  }
+}
+
+/* Circles w/ content inside Style */
+.subtitle {
+  margin-top: 0rem;
+  font-size: 2.1rem;
+  opacity: 0.9;
+}
+
+.incident-steps {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.incident-steps h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.steps-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.step {
+  position: relative;
+  z-index: 1;
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* What makes text in circles red */
+.step:hover {
+  z-index: 9999;
+  transform: scale(1.15);
+}
+
+/* Numbers inside of circles size and styles */
+.step-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0077cc;
+  margin-bottom: 10px;
+}
+
+/* Hover function/annamation and lights up red */
+.step:hover {
+  transform: scale(1.45);
+  color: red;
+}
+
+.step:hover .step-number {
+  color: red;
+}
+
+.step {
+  position: relative;
+}
+
+/* Box that pops up after hovering over circle size and style */
+.info-box {
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  padding: 8px;
+  background: #222;
+  color: white;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  font-size: 0.85rem;
+  z-index: 10;
+}
+
+.step:hover .info-box {
+  opacity: 1;
+}
+
+/* Background color/border color */
+body {
+  background-color: blue;
+}
+
+/* 2026 copyright section at bottom of page */
+.site-footer {
+  background-color: #0b1e3d;
+  color: #d9e6ff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  border-top: 2px solid #1a73e8;
+}
+
+/* graph at bottom of page */
+.graph-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.graph-section img {
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Margin and spacing for statistic towards bottom of webpage */
+.incident-steps p {
+  margin-top: 90px;   
+  text-align: center;
+  font-size: 1.1rem;
+}
+.terminal {
+  background: black;
+  color: #00ff55;
+  padding: 20px;
+  font-family: monospace;
+  width: 80%;
+  margin: 40px auto;
+  border-radius: 8px;
+}
+
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #00ff55;
+  width: 0;
+  animation: typing 4s steps(40) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.code-columns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 40px 0;
+  font-family: monospace;
+  font-size: 20px;
+  color: #00ff55;
+}
+
+.code-columns span {
+  display: inline-block;
+  animation: fall 2s linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+/* Container */
+.network-hack {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background:
+    linear-gradient(#0f0 1px, transparent 1px),
+    linear-gradient(90deg, #0f0 1px, transparent 1px);
+  background-size: 25px 25px;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 50px auto;
+  box-shadow: 0 0 20px rgba(0,255,0,0.4);
+}
+
+/* Scanning beam */
+.scan-beam {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0,255,0,0.05),
+    rgba(0,255,0,0.4),
+    rgba(0,255,0,0.05)
+  );
+  animation: scanDown 3s linear infinite;
+}
+
+@keyframes scanDown {
+  0% { top: -100%; }
+  100% { top: 100%; }
+}
+
+/* Terminal text */
+.hack-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-family: monospace;
+  color: #00ff55;
+  font-size: 0.9rem;
+  animation: flicker 2s infinite alternate;
+}
+
+.hack-text p {
+  margin: 3px 0;
+  opacity: 0;
+  animation: typeIn 6s infinite;
+}
+
+.hack-text p:nth-child(1) { animation-delay: 0s; }
+.hack-text p:nth-child(2) { animation-delay: 1s; }
+.hack-text p:nth-child(3) { animation-delay: 2s; }
+.hack-text p:nth-child(4) { animation-delay: 3s; }
+.hack-text p:nth-child(5) { animation-delay: 4s; }
+
+@keyframes typeIn {
+  0% { opacity: 0; transform: translateX(-10px); }
+  20% { opacity: 1; transform: translateX(0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes flicker {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <!-- header section -->
+<header class="hero-header">
+  <div class="header-overlay">
+    <h1>Cybersecurity Incident Response Plan</h1>
+    <p class="subtitle">A 6‑Step Interactive Guide</p>
+  </div>
+</header>
+
+<!-- body -->
+<section class="incident-steps">
+  <h2>The 6 Steps of Incident Response</h2>
+<div class="network-hack">
+  <div class="scan-beam"></div>
+  <div class="hack-text">
+    <p>Initializing network scan...</p>
+    <p>Accessing node 192.168.14.22...</p>
+    <p>Decrypting handshake...</p>
+    <p>Mapping internal topology...</p>
+    <p>Connection established.</p>
+  </div>
+</div>
+  <!-- This starts the circles -->
+  <div class="steps-container">
+  <div class="stats-section">
+  <h2>How Often Do You Test Your Cybersecurity Incident Response Procedures?</h2>
+</div>
+    <div class="step">
+      <span class="step-number">1</span>
+      <h3>Preparation</h3>
+
+      <!-- Hover info box -->
+      <div class="info-box">
+        This step focuses on creating policies, training, and tools before an incident occurs. Make sure your organization has a clear security policy, understand your risks, and know which systems and data are most important. Decide what types of incidents matter most and assemble a Computer Security Incident Response Team (CSIRT) to handle them.
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-number">2</span>
+      <h3>Detection</h3>
+      
+      <!-- Hover info box -->
+      <div class="info-box">
+       This step focuses on spotting early warning signs that something may be wrong. Keep an eye on your systems for anything unusual. When something suspicious happens, confirm whether it’s a real security incident. Wireshark is a great security tool for sniffing network traffic. Gather evidence (unusual packets), figure out what type of incident it is, how serious it is, and document everything you find. 
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-number">3</span>
+      <h3>Analysis</h3>
+      
+        <!-- Hover info box -->
+      <div class="info-box">
+        This step focuses on digging into the incident so you can understand exactly what happened and how serious it is. Review the evidence you’ve collected, figure out how the attacker got in, identify which systems or data were affected, and determine the overall impact. Your goal here is to get a clear picture of the incident so you know what to fix first and how to guide the rest of the response.
+
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-number">4</span>
+      <h3>Containment</h3>
+      
+        <!-- Hover info box -->
+      <div class="info-box">
+       This step focuses on stopping the incident from spreading and limiting the damage as quickly as possible.
+Start by taking immediate action, such as isolating affected devices or network segments, to prevent the attacker from moving further. After that, apply longer‑term containment measures. This means temporary fixes that keep your systems running safely while you work on rebuilding clean, secure versions of the affected systems.
+
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-number">5</span>
+      <h3>Eradication</h3>
+      
+        <!-- Hover info box -->
+      <div class="info-box">
+        This step focuses on completely removing the threat and fixing the weaknesses (security patching) that allowed it to happen. Eliminate any malware, malicious files, or unauthorized access from every affected system as soon as possible. Then you track down the root cause — how the attacker got in — and close that gap so the same method can’t be used again. Your goal here is to make sure the environment is clean, stable, and protected before moving on to the recovery phase.
+
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="step-number">6</span>
+      <h3>Recovery</h3>
+        <!-- Hover info box -->
+      <div class="info-box">
+       This step focuses on safely bringing your systems back to normal operation after the threat has been removed. Carefully restore affected systems into production, making sure everything is clean and stable before reconnecting them. Be sure to test each system, verify that it’s functioning correctly, and monitor it closely for any unusual activity. Your goal is to return to full operation without reopening the door to another attack.
+
+      </div>
+    </div>
+
+  </div>
+ 
+<p><strong style="font-size: 24px;">Did you know that only 16% of technology leaders run monthly drills to test cybersecurity incident response procedures?</strong></p>
+
+<div class="graph-section">
+  <img src="./How-Often-Do-You-Test-Your-Cybersecurity-Incident-Response-Procedures.png" alt="Cybersecurity graph">
+</div>
+</section>
+<footer class="site-footer">
+  <p>© 2026 Kevin's Cybersecurity Guide</p>
+</footer>
+  
+  
+  
+
+
+
+</body></html>
